@@ -7,14 +7,16 @@ User currentUser = User(
   username: 'iamudesharma',
   followers: 130,
   following: 120,
-  profileimage: '',
+  profileimage:
+      'https://images.unsplash.com/photo-1595781572981-d63151b232ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80',
   post: [
     Post(
       comments: [],
       des: '',
       isLiked: false,
       like: 28,
-      postImages: '',
+      postImages:
+          'https://images.unsplash.com/photo-1595781572981-d63151b232ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80',
       datatime: DateTime(
         2021,
         5,
@@ -32,7 +34,8 @@ List<User> allUsers = [
     username: 'vijayyadav13',
     followers: 400,
     following: 30,
-    profileimage: '',
+    profileimage:
+        'https://images.unsplash.com/photo-1589081318939-f9952734290f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80',
     post: [
       Post(
         comments: [
@@ -42,7 +45,8 @@ List<User> allUsers = [
         des: 'its my first post',
         isLiked: false,
         like: 100,
-        postImages: '',
+        postImages:
+            'https://images.unsplash.com/photo-1589081318939-f9952734290f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80',
         datatime: DateTime(2021, 6, 2),
       ),
     ],
@@ -53,7 +57,8 @@ List<User> allUsers = [
     username: 'jaisharma',
     followers: 100,
     following: 300,
-    profileimage: '',
+    profileimage:
+        'https://images.unsplash.com/photo-1543117976-792a2d6ddb1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80',
     post: [
       Post(
         comments: [
@@ -63,7 +68,8 @@ List<User> allUsers = [
         des: 'its my first post',
         isLiked: false,
         like: 100,
-        postImages: '',
+        postImages:
+            'https://images.unsplash.com/photo-1543117976-792a2d6ddb1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80',
         datatime: DateTime(2021, 3, 2),
       ),
     ],
@@ -74,7 +80,8 @@ List<User> allUsers = [
     username: 'hishrama',
     followers: 400,
     following: 890,
-    profileimage: '',
+    profileimage:
+        'https://images.unsplash.com/photo-1590098391939-421c32ce7095?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80',
     post: [
       Post(
         comments: [
@@ -84,7 +91,8 @@ List<User> allUsers = [
         des: 'its my first post',
         isLiked: false,
         like: 100,
-        postImages: '',
+        postImages:
+            'https://images.unsplash.com/photo-1590098391939-421c32ce7095?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80',
         datatime: DateTime(2021, 6, 2),
       ),
     ],
@@ -95,7 +103,8 @@ List<User> allUsers = [
     username: 'vijay13',
     followers: 90,
     following: 307,
-    profileimage: '',
+    profileimage:
+        'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80',
     post: [
       Post(
         comments: [
@@ -105,7 +114,8 @@ List<User> allUsers = [
         des: 'its my first post',
         isLiked: false,
         like: 100,
-        postImages: '',
+        postImages:
+            'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80',
         datatime: DateTime(2021, 3, 12),
       ),
     ],
@@ -116,7 +126,8 @@ List<User> allUsers = [
     username: 'sharmaji2',
     followers: 180,
     following: 730,
-    profileimage: '',
+    profileimage:
+        'https://images.unsplash.com/photo-1500048993953-d23a436266cf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80',
     post: [
       Post(
         comments: [
@@ -126,11 +137,13 @@ List<User> allUsers = [
         des: 'its my first post',
         isLiked: false,
         like: 100,
-        postImages: '',
+        postImages:
+            'https://images.unsplash.com/photo-1500048993953-d23a436266cf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80',
         datatime: DateTime(2021, 2, 4),
       ),
     ],
   ),
+
   // User(
   //   id: 7,
   //   name: 'Vijay Shrama',
