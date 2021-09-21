@@ -1,30 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:social_media_app/data/data.dart';
 
-class PersonView extends StatelessWidget {
-  const PersonView({Key? key}) : super(key: key);
+import 'package:social_media_app/data/user_model.dart';
+
+class UserProfileView extends StatelessWidget {
+  const UserProfileView({
+    Key? key,
+    required this.currentUser,
+  }) : super(key: key);
+
+  final User currentUser;
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        children: [
-          AppBar(
-            title: Text(
-              currentUser.username,
-              style: const TextStyle(
-                fontSize: 25,
-              ),
-            ),
-            actions: const [
-              Icon(
-                Icons.menu,
-              ),
-              SizedBox(
-                width: 10,
-              )
-            ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          currentUser.username,
+          style: const TextStyle(
+            fontSize: 25,
           ),
+        ),
+        actions: const [
+          Icon(
+            Icons.menu,
+          ),
+          SizedBox(
+            width: 10,
+          )
+        ],
+      ),
+      body: Column(
+        children: [
           const SizedBox(
             height: 10,
           ),
@@ -124,18 +130,32 @@ class PersonView extends StatelessWidget {
                 const SizedBox(
                   height: 15,
                 ),
-                OutlinedButton(
-                  onPressed: () {},
-                  child: Text('Edit Profile'),
-                  style: OutlinedButton.styleFrom(
-                    side: BorderSide(
-                      color: Theme.of(context).primaryColor,
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Text('Follow'),
+                      style: OutlinedButton.styleFrom(
+                        side: BorderSide(
+                          color: Theme.of(context).primaryColor,
+                        ),
+                      ),
                     ),
-                    fixedSize: Size(
-                      MediaQuery.of(context).size.width,
-                      40,
+                 const   SizedBox(
+                   width: 15,
+                 )
+ ,                   OutlinedButton(
+                      onPressed: () {},
+                      child: Text('Message'),
+                      style: OutlinedButton.styleFrom(
+                        side: BorderSide(
+                          color: Theme.of(context).primaryColor,
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
               ],
             ),

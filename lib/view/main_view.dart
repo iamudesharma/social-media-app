@@ -25,8 +25,11 @@ class _MainViewState extends State<MainView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // floatingActionButton: FloatingActionButton(onPressed: () {}),
       body: PersistentTabView(
         context,
+
         controller: tabController,
         screens: _buildScreens(),
         items: _navBarsItems(),

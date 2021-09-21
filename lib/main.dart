@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/route_manager.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:social_media_app/view/login_view.dart';
 
 void main() {
@@ -21,17 +22,18 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-          brightness: Brightness.light,
-          primaryColor: const Color(0xff9C27B0),
-          primarySwatch: Colors.purple,
-          // ignore: deprecated_member_use
-          accentColor: const Color(0xff9E9E9E),
-          primaryColorDark: const Color(0xff7B1FA2),
-          primaryColorLight: const Color(
-            0xffE1BEE7,
-          )),
+        textTheme: GoogleFonts.aBeeZeeTextTheme(),
+        brightness: Brightness.light,
+        primaryColor: const Color(0xff9C27B0),
+        primarySwatch: Colors.purple,
+        // ignore: deprecated_member_use
+        accentColor: const Color(0xff9E9E9E),
+        primaryColorDark: const Color(0xff7B1FA2),
+        primaryColorLight: const Color(
+          0xffE1BEE7,
+        ),
+      ),
       home: const LoginView(),
     );
   }
 }
-

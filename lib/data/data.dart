@@ -23,6 +23,32 @@ User currentUser = User(
         3,
       ),
     ),
+    Post(
+      comments: [],
+      des: '',
+      isLiked: false,
+      like: 28,
+      postImages:
+          'https://images.unsplash.com/photo-1595781572981-d63151b232ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80',
+      datatime: DateTime(
+        2021,
+        5,
+        3,
+      ),
+    ),
+    Post(
+      comments: [],
+      des: '',
+      isLiked: false,
+      like: 28,
+      postImages:
+          'https://images.unsplash.com/photo-1595781572981-d63151b232ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80',
+      datatime: DateTime(
+        2021,
+        5,
+        3,
+      ),
+    ),
   ],
 );
 

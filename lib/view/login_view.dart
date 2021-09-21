@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:social_media_app/helpers/helpers.dart';
 import 'package:social_media_app/view/create_new_account_view.dart';
@@ -23,6 +24,10 @@ class LoginView extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
+            SizedBox(
+                height: context.height * 0.3,
+                width: context.width * 0.7,
+                child: SvgPicture.asset('assets/Social-Media.svg')),
             Helpers.textFrormField(
               hintText: 'Enter The Email',
               iconData: Icons.email,
