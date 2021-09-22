@@ -5,7 +5,6 @@ import 'package:social_media_app/bindings/login_bindings.dart';
 import 'package:social_media_app/controller/auth/create_new_account_controller.dart';
 import 'package:social_media_app/helpers/helpers.dart';
 import 'package:social_media_app/view/login_view.dart';
-import 'package:social_media_app/view/main_view.dart';
 
 class CreateNewAccount extends GetView<CreateAccoutController> {
   const CreateNewAccount({Key? key}) : super(key: key);
@@ -87,15 +86,11 @@ class CreateNewAccount extends GetView<CreateAccoutController> {
                             name: controller.usernameContoller.text,
                             password: controller.passwordController.text,
                           )
-                          .then((value) => print(
-                                'user craete bc',
-                              ))
-                          .whenComplete(
-                            () => Get.to(
-                              () => const LoginView(),
-                              binding: LoginBinding(),
-                            ),
+                          .then(
+                            (value) => print(value),
                           );
+
+                      Get.to(() => const LoginView());
                     },
                     child: const Text(
                       'Create New Account',

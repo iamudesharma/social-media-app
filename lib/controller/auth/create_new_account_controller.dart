@@ -20,23 +20,24 @@ class CreateAccoutController extends GetxController {
   //   return user!;
   // }
 
-  Future<void> createUser( 
+  Future<bool> createUser(
       {String? name, String? email, String? password}) async {
     try {
       isloading.value = true;
       UserCredential userCredential = await firebaseAuth
           .createUserWithEmailAndPassword(email: email!, password: password!);
-
+      print(userCredential.user?.email);
       if (userCredential.user != null) {
         await saveUserToFirestore(
           email: email,
           name: name,
           user: userCredential.user,
         );
-        isloading.value = false;
       }
+      return true;
     } catch (e) {
-      isloading.value = false;
+      print(e.toString());
+      return false;
     }
   }
 
@@ -49,7 +50,7 @@ class CreateAccoutController extends GetxController {
       "username": name,
       "email": email,
       "time": Timestamp.now(),
-      "id": "",
+      "id": user?.uid,
       'photoUrl': user?.photoURL ?? ''
     });
   }

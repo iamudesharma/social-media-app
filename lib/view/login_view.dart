@@ -7,6 +7,7 @@ import 'package:social_media_app/controller/auth/login_controller.dart';
 import 'package:social_media_app/helpers/helpers.dart';
 import 'package:social_media_app/view/create_new_account_view.dart';
 import 'package:social_media_app/view/main_view.dart';
+// import 'package:social_media_app/view/main_view.dart';
 
 class LoginView extends GetView<LoginController> {
   const LoginView({Key? key}) : super(key: key);
@@ -40,6 +41,7 @@ class LoginView extends GetView<LoginController> {
                       width: context.width * 0.7,
                       child: SvgPicture.asset('assets/Social-Media.svg')),
                   Helpers.textFrormField(
+                    // textInputType: ,
                     controller: controller.emailController,
                     hintText: 'Enter The Email',
                     iconData: Icons.email,
@@ -53,6 +55,7 @@ class LoginView extends GetView<LoginController> {
                     hintText: 'Enter The Password',
                     iconData: Icons.email,
                     labelText: 'Password',
+                    isPassword: true,
                   ),
                   const SizedBox(
                     height: 30,
@@ -60,13 +63,11 @@ class LoginView extends GetView<LoginController> {
                   ElevatedButton(
                     onPressed: () async {
                       // Todo  Add Login Fuctions
-                      await controller
-                          .loginUser(controller.emailController.text,
-                              controller.passwordController.text)
-                          .then((value) {
-                        print('login completed');
-                        Get.to(() => const MainView());
-                      });
+                      await controller.loginUser(
+                          controller.emailController.text,
+                          controller.passwordController.text);
+
+                      Get.off(() => const MainView());
                     },
                     child: const Text(
                       'Login',

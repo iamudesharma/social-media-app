@@ -65,11 +65,11 @@ class _MainViewState extends State<MainView> {
   }
 
   List<Widget> _buildScreens() {
-    return const [
+    return [
       HomeView(),
-      SearchView(),
-      MessageView(),
-      PersonView(),
+      const SearchView(),
+      const MessageView(),
+      const PersonView(),
     ];
   }
 

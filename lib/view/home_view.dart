@@ -1,19 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:social_media_app/controller/auth/login_controller.dart';
 import 'package:social_media_app/data/data.dart';
+import 'package:social_media_app/view/login_view.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({Key? key}) : super(key: key);
+  HomeView({Key? key}) : super(key: key);
+  final LoginController controller = Get.find<LoginController>();
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        const SliverAppBar(
+        SliverAppBar(
           pinned: true,
           centerTitle: true,
-          title: Text(
+          title: const Text(
             'Social App',
           ),
+          actions: [
+            GestureDetector(
+              onTap: () {
+                controller.logOut();
+                Get.offAll(() => const LoginView());
+              },
+              child: const Icon(
+                Icons.logout,
+              ),
+            ),
+          ],
         ),
         // SliverList(
         //   delegate: SliverChildBuilderDelegate(

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -6,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:social_media_app/controller/firebase_controller.dart/firebase_controller.dart';
 
 class LoginController extends GetxController {
+  late StreamSubscription authstate;
   Rxn<User> user = Rxn<User>();
   var isloading = false.obs;
   late TextEditingController emailController;
@@ -19,31 +22,19 @@ class LoginController extends GetxController {
     return user!;
   }
 
-  saveUserToFirestore({
-    String? name,
-    User? user,
-    String? email,
-  }) async {
-    await usersRef.doc(user?.uid).set({
-      "username": name,
-      "email": email,
-      "time": Timestamp.now(),
-      "id": "",
-      'photoUrl': user?.photoURL ?? ''
-    });
-  }
-
   Future<void> loginUser(String email, String password) async {
     try {
-      isloading.value = true;
-      UserCredential userCredential = await firebaseAuth
-          .signInWithEmailAndPassword(email: email, password: password);
+      UserCredential userCredential =
+          await firebaseAuth.signInWithEmailAndPassword(
+              email: 'udesh2568@gmail.com', password: '12345678');
+      print(userCredential.user?.email);
 
       if (userCredential.user != null) {
         isloading.value = false;
         print('user login True');
       }
     } catch (e) {
+      print(e.toString());
       isloading.value = false;
     }
   }
@@ -54,7 +45,7 @@ class LoginController extends GetxController {
 
   @override
   void onInit() {
-    firebaseAuth.authStateChanges().listen((_user) {
+    authstate = firebaseAuth.authStateChanges().listen((_user) {
       if (_user != null) {
         user.value = _user;
       }
@@ -64,5 +55,11 @@ class LoginController extends GetxController {
     emailController = TextEditingController();
     passwordController = TextEditingController();
     super.onInit();
+  }
+
+  @override
+  void onClose() {
+    authstate.cancel();
+    super.onClose();
   }
 }

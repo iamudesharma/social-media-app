@@ -12,6 +12,7 @@ class Helpers {
     required TextEditingController controller,
   }) {
     return TextFormField(
+      controller: controller,
       validator: validator,
       obscureText: isPassword ?? false,
       keyboardType: textInputType ?? TextInputType.emailAddress,
