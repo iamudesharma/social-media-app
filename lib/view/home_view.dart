@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:social_media_app/controller/auth/login_controller.dart';
-import 'package:social_media_app/data/data.dart';
+import 'package:social_media_app/controller/firebase_controller.dart/firebase_controller.dart';
+import 'package:social_media_app/controller/post/post_controller.dart';
 import 'package:social_media_app/view/login_view.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({Key? key}) : super(key: key);
   final LoginController controller = Get.find<LoginController>();
+  final PostsController postcontroller = Get.find<PostsController>();
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +31,17 @@ class HomeView extends StatelessWidget {
               ),
             ),
           ],
+        ),
+        SliverToBoxAdapter(
+          child: ElevatedButton(
+              onPressed: () async {
+                await postcontroller.pickImage().then((value) async {
+                  await postcontroller.uploadImage(posts, value!);
+                  await postcontroller.uploadPost(
+                      value, 'Goa', 'My First Image Upload');
+                });
+              },
+              child: const Text('pick Image')),
         ),
         // SliverList(
         //   delegate: SliverChildBuilderDelegate(

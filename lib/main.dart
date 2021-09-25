@@ -5,10 +5,13 @@ import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:social_media_app/bindings/create_new_account_bindings.dart';
+import 'package:social_media_app/controller/auth/create_new_account_controller.dart';
 import 'package:social_media_app/controller/auth/login_controller.dart';
 import 'package:social_media_app/controller/firebase_controller.dart/firebase_controller.dart';
 import 'package:social_media_app/view/login_view.dart';
 import 'package:social_media_app/view/main_view.dart';
+
+import 'controller/post/post_controller.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +22,10 @@ Future<void> main() async {
   ));
 
   Get.put(LoginController());
+  Get.put(CreateAccoutController());
+
   Get.put<CreateAccountBinding>(CreateAccountBinding());
+  Get.put(PostsController());
   runApp(const MyApp());
 }
 

@@ -27,7 +27,6 @@ class UserModel {
   UserModel.fromJson(Map<String, dynamic> json) {
     username = json['username'];
     email = json['email'];
-    // country = json['country'];
     photoUrl = json['photoUrl'];
     signedUpAt = json['signedUpAt'];
     isOnline = json['isOnline'];
@@ -37,7 +36,7 @@ class UserModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['username'] = username;
     // data['country'] = this.country;
     data['email'] = email;

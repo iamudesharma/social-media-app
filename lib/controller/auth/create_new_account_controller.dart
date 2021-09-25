@@ -51,7 +51,7 @@ class CreateAccoutController extends GetxController {
       "email": email,
       "time": Timestamp.now(),
       "id": user?.uid,
-      'photoUrl': user?.photoURL ?? ''
+      'photoUrl': user?.photoURL == null ? null : user!.photoURL
     });
   }
 
